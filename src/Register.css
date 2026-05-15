@@ -74,7 +74,7 @@ input:hover{
 .l1{
     color: rgb(230, 230, 240);
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .l1:hover{
     text-decoration:underline;
