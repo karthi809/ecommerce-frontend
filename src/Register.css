@@ -29,7 +29,7 @@ body{
 
 .register input{
     backdrop-filter:none;
-    
+    color: rgba(110, 110, 110, 0.384);
     background: transparent;
     border-bottom: 2px solid;
     border-top: transparent;
