@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './Register.css';
-import Login from './Login';
-import Dashboard from './Dashboard';
 import { useNavigate,Link } from 'react-router-dom';
 
 const Register = () => {
@@ -13,7 +11,7 @@ const Register = () => {
   const[num,setNum]=useState("");
   const[pass,setPass]=useState("");
   const[conPass,setConPass]=useState("");
-  const[log,setLog]=useState(false);
+  // const[log,setLog]=useState(false);
   const[loading,setLoading]=useState(false);
 
 
@@ -150,7 +148,7 @@ const Register = () => {
           <input type='Password' placeholder='Confirm Password' value={conPass} onChange={(e)=>setConPass(e.target.value)}></input>
         </div>
         
-        <button className='f6' type="submit" onClick={save} >Register</button><br></br>
+        <button className='f6' type="submit" onClick={save} disabled={loading}> {loading ? "Registering..." : "Register"}</button><br></br>
 
         <Link className='l1' to={"/login"} >Already Registered,Login</Link>
       </form>
