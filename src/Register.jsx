@@ -82,7 +82,7 @@ const Register = () => {
     setLoading(true);
 
     try{
-      const response=await fetch("http://localhost:8080/api/users/store",
+      const response=await fetch("https://fullstack-project-1h1g.onrender.com",
         {
           method:"POST",
           headers:{"Content-Type":"application/json"},
