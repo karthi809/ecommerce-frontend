@@ -14,10 +14,10 @@ body{
     color: red;
     background: transparent;
     backdrop-filter: blur(10px);
-    width: 400px;
+    width: 500px;/*400*/
     margin: 50px auto;
     margin-top:50px;/*30*/
-    margin-left: 90px;
+    margin-left: 110px;
     padding-bottom: 20px;
     max-height:fit-content;
     border-radius: 10px;
@@ -69,6 +69,7 @@ input:hover{
 .l1{
     color: rgb(230, 230, 240);
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .l1:hover{
     text-decoration:underline;
