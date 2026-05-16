@@ -82,7 +82,7 @@ const Login = () => {
       setLoading(false);
     }
   }
-  }
+  
 
   // if(log){
   //   return(
