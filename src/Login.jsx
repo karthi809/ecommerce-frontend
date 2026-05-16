@@ -9,7 +9,8 @@ const Login = () => {
   
   const[email,setEmail]=useState("");
   const[pass,setPass]=useState("");
-  const[log,setLog]=useState(false);
+  // const[log,setLog]=useState(false);
+  const[loading,setLoading]=useState(false);
 
 
 
@@ -43,14 +44,51 @@ const Login = () => {
         return;
     }
 
-    setLog(true);
+    setLoading(true);
+    setLoading(true);
+
+    try{
+      const response=await fetch("https://fullstack-project-1h1g.onrender.com/api/users/store",
+        {
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({
+            email:email,
+            password:pass,
+          })
+        }
+      );//response ends here
+
+      const message=await response.text();
+
+      if(response.ok){
+        setName("");
+        setConPass("");
+        setEmail("");
+        setPass("");
+        setNum("");
+        alert("Registered successfully");
+        navigate("/dashboard");
+      }
+      else{
+        alert(message);
+      }
+    }//try ends here
+    catch(error){
+      alert("cannot connect to the server,make sure the backend is running.")
+      console.log(error);
+    }
+    finally{
+      setLoading(false);
+    }
+  }
   }
 
-  if(log){
-    return(
-      navigate("/dashboard")
-    )
-  }
+  // if(log){
+  //   return(
+  //     navigate("/dashboard")
+  //   )
+  // }
 
   return (
 
@@ -68,7 +106,7 @@ const Login = () => {
               <input type="password" placeholder='Password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
             </div>
             
-            <button className='f4' type="submit" onClick={save} >Login</button><br></br>
+            <button className='f4' type="submit" onClick={save} disabled={loading}>{loading?"Logging...":"Login"}</button><br></br>
     
             <Link className='l1' to={"/"} >Don't have an Account,Register here</Link>
           </form>
