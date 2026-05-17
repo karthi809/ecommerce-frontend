@@ -1,3 +1,5 @@
 n1{
     background-color: black;
+    max-width: max-content;
+    height: 300px;
 }

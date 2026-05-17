@@ -45,10 +45,10 @@ const Login = () => {
     }
 
     setLoading(true);
-    setLoading(true);
+    //BACKEND
 
     try{
-      const response=await fetch("https://fullstack-project-1h1g.onrender.com/api/users/store",
+      const response=await fetch("https://fullstack-project-1h1g.onrender.com/api/users/login",
         {
           method:"POST",
           headers:{"Content-Type":"application/json"},
@@ -62,11 +62,8 @@ const Login = () => {
       const message=await response.text();
 
       if(response.ok){
-        setName("");
-        setConPass("");
         setEmail("");
         setPass("");
-        setNum("");
         alert("Registered successfully");
         navigate("/dashboard");
       }

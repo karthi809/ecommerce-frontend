@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div>
       <title>Dashboard</title>
-      <nav className='n1'>lkjhgfghjkjhg</nav>
+      <div className='n1'>lkjhgfghjkjhg</div>
     </div>
   )
 }
