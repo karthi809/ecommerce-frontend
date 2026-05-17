@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
   }
 
-  const save=()=>{
+  const save=async()=>{
 
     // EMAIL
 
@@ -54,7 +54,7 @@ const Login = () => {
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify({
             email:email,
-            password:pass,
+            password:pass
           })
         }
       );//response ends here
